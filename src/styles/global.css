@@ -1,0 +1,223 @@
+:root {
+  --marrom: #7a4a2e;
+  --marrom-escuro: #5a3420;
+  --bege: #f7efe5;
+  --creme: #fffaf3;
+  --escuro: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* APP */
+.app.claro {
+  background: var(--bege);
+  color: #2b1d14;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app.escuro {
+  background: black;
+  color: #ffffff;
+  min-height: 100vh;
+}
+/* TOPO */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, var(--marrom), var(--marrom-escuro));
+  color: rgb(255, 255, 255);
+
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.logo span {
+  font-size: 13px;
+  opacity: 0.9;
+  align-items: flex-start;
+}
+
+/*  SWITCH */
+.switch {
+  position: relative;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 24px;
+  inset: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #302f2f;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/*  BOTÃO ADICIONAR */
+.btn-adicionar {
+  margin: 20px;
+  padding: 12px 18px;
+  background: var(--marrom);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-adicionar:hover {
+  background: var(--marrom-escuro);
+}
+
+/*  TABELA */
+table {
+  width: 95%;
+  margin: auto;
+  background: var(--creme);
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th {
+  background: var(--marrom);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.app.escuro table {
+  background: #1f1f1f;
+}
+
+.app.escuro td {
+  background: #2a2a2a;
+}
+
+.app.escuro button {
+  background: #2a2a2a;
+}
+
+/*  MODAL */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--creme);
+  width: 400px;
+  max-height: 85vh;
+  padding: 20px;
+  border-radius: 15px;
+  overflow-y: auto;
+  animation: modalIn 0.25s ease;
+}
+
+.app.escuro .modal {
+  background: #1f1f1f;
+}
+
+.modal h2 {
+  margin-top: 10;
+  text-align: center;
+}
+
+h2{
+  margin-left: 5vh;
+}
+
+.modal input {
+  width: 95%;
+  padding: 9px;
+  margin-bottom: 12px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+}
+
+.app.escuro .modal input {
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #444;
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.acoes button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.acoes button:first-child {
+  background: var(--marrom);
+  color: white;
+}
+
+.acoes button:last-child {
+  background: #ccc;
+}
+
+/*  ANIMAÇÃO */
+@keyframes modalIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
